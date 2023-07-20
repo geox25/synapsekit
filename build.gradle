@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'me.geox25'
-version '0.1.3-alpha'
+version '0.1.1-alpha'
 
 repositories {
     mavenCentral()
@@ -34,7 +34,7 @@ afterEvaluate {
                 from components.kotlin
                 groupId = 'me.geox25'
                 artifactId = 'synapsekit'
-                version = '0.1.3-alpha'
+                version = '0.1.1-alpha'
             }
         }
     }
