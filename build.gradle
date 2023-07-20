@@ -43,6 +43,18 @@ shadowJar {
     }
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'me.geox25.synapsekit'
+            artifactId = 'synapsekit'
+            version = version
+
+            from components.java
+        }
+    }
+}
+
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
