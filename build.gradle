@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'me.geox25'
-version '1.0-SNAPSHOT'
+version '0.1-alpha'
 
 repositories {
     mavenCentral()
@@ -34,7 +34,7 @@ test {
 shadowJar {
     archiveBaseName.set('synapsekit')
     archiveClassifier.set('')
-    archiveVersion.set('1.0-SNAPSHOT')
+    archiveVersion.set('0.1-alpha')
     minimize()
 
     manifest {
