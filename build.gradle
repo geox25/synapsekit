@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version "1.9.0"
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.0'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
     id 'maven-publish'
 }
 
@@ -25,23 +24,6 @@ dependencies {
     implementation 'org.msgpack:jackson-dataformat-msgpack:0.9.4'
     implementation 'io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT'
     implementation 'de.undercouch:bson4jackson:2.13.1'
-}
-
-// Exclude the Shadow task when building with JitPack
-def isJitPack = System.getenv("JITPACK") == "true"
-if (isJitPack) {
-    tasks.shadowJar.enabled = false
-}
-
-shadowJar {
-    archiveBaseName.set('synapsekit')
-    archiveClassifier.set('')
-    archiveVersion.set('0.1.3-alpha')
-    minimize()
-
-    manifest {
-        attributes 'Main-Class' : 'me.geox25.synapsekit.MainKt'
-    }
 }
 
 afterEvaluate {
