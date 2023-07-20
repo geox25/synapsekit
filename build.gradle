@@ -62,7 +62,3 @@ task comps {
         println("Components: " + components*.name)
     }
 }
-
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
-}
