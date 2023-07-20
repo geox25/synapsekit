@@ -45,11 +45,10 @@ shadowJar {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            groupId = 'me.geox25.synapsekit'
+        maven(MavenPublication) {
+            groupId = 'me.geox25'
             artifactId = 'synapsekit'
-            version = version
-
+            version = '0.1-alpha'
             from components.java
         }
     }
