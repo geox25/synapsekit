@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'me.geox25'
-version '0.1.1-alpha'
+version '0.1.2-alpha'
 
 repositories {
     mavenCentral()
@@ -35,7 +35,7 @@ test {
 shadowJar {
     archiveBaseName.set('synapsekit')
     archiveClassifier.set('')
-    archiveVersion.set('0.1.1-alpha')
+    archiveVersion.set('0.1.2-alpha')
     minimize()
 
     manifest {
@@ -43,13 +43,16 @@ shadowJar {
     }
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'me.geox25'
-            artifactId = 'synapsekit'
-            version = '0.1.1-alpha'
-            from components.java
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'me.geox25'
+                artifactId = 'synapsekit'
+                version = '0.1.2-alpha'
+            }
         }
     }
 }
